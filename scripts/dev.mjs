@@ -9,7 +9,7 @@ const root = normalize(join(import.meta.dir, ".."));
 const port = Number(process.env.PORT) || 4000;
 
 // su GitHub Pages site.github.repository_url arriva dal plugin github-metadata;
-// qui lo ricaviamo dal remote git, se c'è (serve a bottone e bookmarklet)
+// qui lo ricaviamo dal remote git, se c'è (serve al bottone "proponi un link")
 async function repositoryUrl() {
   try {
     const remote = (await Bun.$`git remote get-url origin`.cwd(root).quiet().text()).trim();

@@ -116,15 +116,18 @@ function loop(el, fps, draw) {
   return sync;
 }
 
-// ── 1. scena → pagina: dissolvenza Bayer, con qualche goccia che cade nel buio
+// ── 1. scena ↔ pagina: dissolvenza Bayer, con qualche goccia che cade nel buio.
+//    data-from="top": il buio sta in alto (la scena che ritorna in fondo alla pagina)
 for (const canvas of document.querySelectorAll('[data-dither="fade"]')) {
+  const fromTop = canvas.dataset.from === "top";
   const g = setup(canvas, 3);
   const drops = rng(7);
   const cols = Array.from({ length: 400 }, () => ({ s: 0.4 + drops() * 0.8, o: drops() * 40, k: drops() }));
   const draw = (t) => {
     g.paint((x, y) => {
-      // smoothstep su [0.04, 0.92]: le ultime righe sono piene, quindi nessun bordo con la pagina
-      const v = Math.min(1, Math.max(0, (y / (g.h - 1) - 0.04) / 0.88));
+      // smoothstep su [0.04, 0.92]: il lato della pagina è pieno, quindi nessun bordo
+      const p = y / (g.h - 1);
+      const v = Math.min(1, Math.max(0, ((fromTop ? 1 - p : p) - 0.04) / 0.88));
       const e = v * v * (3 - 2 * v);
       if (e > threshold(x, y)) return C.night;
       const d = cols[x % cols.length];
@@ -186,41 +189,12 @@ for (const canvas of document.querySelectorAll('[data-dither="sig"]')) {
   new ResizeObserver(() => { g.fit(); sync(); }).observe(canvas);
 }
 
-// ── 3. riga del footer: marciapiede bagnato, gocce che increspano
-for (const canvas of document.querySelectorAll('[data-dither="rule"]')) {
-  const g = setup(canvas, 3);
-  const r = rng(42);
-  const rings = Array.from({ length: 7 }, () => ({ x: r(), p: r(), s: 0.25 + r() * 0.3 }));
-  const draw = (t) => {
-    g.paint((x, y) => {
-      const v = y / (g.h - 1);
-      // fascia di luce ambra/teal riflessa
-      const u = x / g.w;
-      const band = Math.exp(-((v - 0.5) ** 2) / 0.02);
-      const hue = Math.sin(u * 6.28 * 1.5 + t * 0.2) * 0.5 + 0.5;
-      let a = band * 0.35 * (0.6 + 0.4 * Math.sin(u * 40 + t * 0.8));
-      for (const d of rings) {
-        const age = (t * d.s + d.p) % 1;
-        const dx = (x - d.x * g.w) * 0.5, dy = (y - g.h / 2) * 1.4;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const rad = age * 18;
-        if (Math.abs(dist - rad) < 0.9) a = Math.max(a, (1 - age) * 0.9);
-      }
-      if (a > threshold(x, y)) return hue > 0.5 ? C.amber2 : C.teal2;
-      return null;
-    });
-  };
-  const sync = loop(canvas, 10, draw);
-  new ResizeObserver(() => { g.fit(); sync(); }).observe(canvas);
-}
-
 // ── filtro: testo + categoria
 const q = document.getElementById("q");
 const catButtons = [...document.querySelectorAll(".cat")];
 const blocks = [...document.querySelectorAll(".cat-block")];
 const status = document.querySelector(".bar__status");
 const empty = document.querySelector(".empty");
-const slFilter = document.querySelector("[data-sl-filter]");
 let cat = new URLSearchParams(location.search).get("cat") || "";
 q.value = new URLSearchParams(location.search).get("q") || "";
 
@@ -250,9 +224,7 @@ function apply() {
     btn.setAttribute("aria-pressed", String(on));
   }
   empty.hidden = shown !== 0;
-  const filtered = terms.length || cat;
-  status.textContent = filtered ? `${shown}/${total} link` : "";
-  slFilter.textContent = filtered ? `grep ${cat ? cat + "/ " : ""}${terms.join(" ")}`.trim() : "";
+  status.textContent = terms.length || cat ? `${shown}/${total} link` : "";
 
   const params = new URLSearchParams();
   if (cat) params.set("cat", cat);
@@ -273,12 +245,10 @@ document.querySelector("[data-reset]").addEventListener("click", () => {
 const root = document.documentElement;
 const densityBtn = document.querySelector("[data-density]");
 const densityLabel = densityBtn.querySelector("[data-density-label]");
-const slDensity = document.querySelector("[data-sl-density]");
 function renderDensity() {
   const wide = root.classList.contains("is-wide");
   densityBtn.setAttribute("aria-pressed", String(wide));
   densityLabel.textContent = wide ? "larga" : "compatta";
-  slDensity.textContent = wide ? "wide" : "compact";
 }
 function toggleDensity() {
   const wide = root.classList.toggle("is-wide");
@@ -296,10 +266,3 @@ addEventListener("keydown", (e) => {
   else if (e.key === "d" && !typing) toggleDensity();
 });
 apply();
-
-// ── orologio statusline
-const clock = document.querySelector("[data-sl-clock]");
-const fmt = new Intl.DateTimeFormat("it-IT", { weekday: "short", hour: "2-digit", minute: "2-digit" });
-const tickClock = () => { clock.textContent = fmt.format(new Date()); };
-tickClock();
-setInterval(tickClock, 15000);

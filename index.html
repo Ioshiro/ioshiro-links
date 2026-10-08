@@ -37,9 +37,10 @@
     </div>
     <div class="bar">
       <nav class="cats" aria-label="categorie">
-        <button type="button" class="cat is-on" data-cat="" aria-pressed="true">tutto <span class="n">{{ links | size }}</span></button>
+        <span class="cats__ps1" aria-hidden="true">cd</span>
+        <button type="button" class="cat is-on" data-cat="" aria-pressed="true">~/<span class="n">{{ links | size }}</span></button>
         {%- for g in groups %}
-        <button type="button" class="cat" data-cat="{{ g.name }}" aria-pressed="false">{{ g.name }}/ <span class="n">{{ g.items | size }}</span></button>
+        <button type="button" class="cat" data-cat="{{ g.name }}" aria-pressed="false">{{ g.name }}/<span class="n">{{ g.items | size }}</span></button>
         {%- endfor %}
       </nav>
       <span class="bar__status" role="status" aria-live="polite"></span>
@@ -58,9 +59,9 @@
         {%- assign subs = g.items | group_by: "cat" | sort: "name" -%}
         {%- for s in subs %}
         {%- assign sub = s.name | remove_first: g.name | remove_first: "/" -%}
-        <div class="sub" data-sub="{{ s.name }}">
+        <div class="sub{% if sub == '' %} sub--root{% endif %}" data-sub="{{ s.name }}">
           {%- if sub != "" %}
-          <h3 class="sub__name"><span class="tree" aria-hidden="true">{% if forloop.last %}└─{% else %}├─{% endif %}</span> {{ sub }}/</h3>
+          <h3 class="sub__name">{{ sub }}/</h3>
           {%- endif %}
           <ul class="links">
             {%- assign items = s.items | sort: "added" | reverse -%}
@@ -68,7 +69,6 @@
             {%- assign host = l.url | split: "//" | last | split: "/" | first | remove_first: "www." -%}
             <li class="link" data-text="{{ l.title | downcase | escape }} {{ l.desc | downcase | escape }} {{ l.tags | join: ' ' | downcase }} {{ l.cat }} {{ host }}">
               <a href="{{ l.url }}" rel="noopener" target="_blank"{% if l.desc %} title="{{ l.desc | escape }}"{% endif %}>
-                <time class="link__date" datetime="{{ l.added | date: '%Y-%m-%d' }}">{{ l.added | date: "%d.%m" }}<span class="yr">.{{ l.added | date: "%y" }}</span></time>
                 <span class="link__body">
                   <span class="link__title">{{ l.title }}</span>
                   {%- if l.desc %}<span class="link__desc">{{ l.desc }}</span>{% endif %}
@@ -90,28 +90,20 @@
     <p class="empty" hidden>niente qui. la pioggia ha lavato via tutto — <button type="button" class="linkish" data-reset>azzera filtri</button></p>
   </main>
 
-  <footer class="shell foot">
-    <canvas class="foot__rule" data-dither="rule" aria-hidden="true"></canvas>
-    <div class="foot__cols">
-      <p>
-        {%- if repo %}
-        <a class="btn" href="{{ repo }}/issues/new?template=add-link.yml">+ salva un link</a>
-        <a class="bookmarklet" href="javascript:void(open('{{ repo }}/issues/new?template=add-link.yml&title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)))" title="trascinalo nella barra dei preferiti">⇢ ioshiro</a>
-        <span class="dim">← trascina nei preferiti</span>
-        {%- endif %}
-      </p>
+  <footer class="foot">
+    <div class="shell foot__row">
+      {%- if repo %}
+      <a class="btn" href="{{ repo }}/issues/new?template=add-link.yml">+ proponi un link</a>
+      {%- endif %}
       <p class="dim">scena <a href="https://ascii.rest/tokyo-rain/">tokyo rain</a> di <a href="https://github.com/bas3line">@bas3line</a> · font <a href="https://departuremono.com/">Departure Mono</a> &amp; <a href="https://www.jetbrains.com/lp/mono/">JetBrains Mono</a></p>
     </div>
+    <!-- in fondo si torna in strada: la stessa scena, che emerge dal buio -->
+    <div class="hero hero--coda" aria-hidden="true">
+      <div class="hero__scene">
+        <ascii-art piece="tokyo-rain" label="la stessa strada di Tokyo sotto la pioggia"></ascii-art>
+      </div>
+      <canvas class="hero__fade" data-dither="fade" data-from="top"></canvas>
+    </div>
   </footer>
-
-  <div class="statusline" aria-hidden="true">
-    <span class="sl__session">ioshiro</span>
-    <span class="sl__win is-on">0:links*</span>
-    <span class="sl__win">1:rain</span>
-    <span class="sl__fill"></span>
-    <span class="sl__filter" data-sl-filter></span>
-    <span class="sl__density" data-sl-density>compact</span>
-    <span class="sl__clock" data-sl-clock>--:--</span>
-  </div>
 </body>
 </html>

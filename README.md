@@ -20,7 +20,14 @@ Anteprima senza Ruby/Jekyll: `scripts/dev.mjs` compila `index.html` con liquidjs
 
 ## Aggiungere un link
 
-- **Bookmarklet**: in fondo alla pagina pubblicata c'è `⇢ ioshiro`, trascinalo nei preferiti. Apre una issue col form già compilato con titolo e URL della pagina corrente: scegli categoria, invia. La Action appende la voce a `_data/links.yml`, fa il commit e chiude la issue. Le issue di altri utenti vengono ignorate.
+- **Dalla pagina**: `+ proponi un link` in fondo apre una issue col form vuoto.
+- **Bookmarklet**: crea un preferito con questo indirizzo. Apre la stessa issue con titolo e URL della pagina corrente già compilati: scegli categoria, invia.
+
+  ```js
+  javascript:void(open('https://github.com/Ioshiro/ioshiro-links/issues/new?template=add-link.yml&title='+encodeURIComponent(document.title)+'&url='+encodeURIComponent(location.href)))
+  ```
+
+  In entrambi i casi la Action appende la voce a `_data/links.yml`, fa il commit e chiude la issue. Le issue di altri utenti vengono ignorate.
 - **A mano**: aggiungi una voce in fondo a `_data/links.yml`.
 
 ```yaml

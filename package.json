@@ -1,0 +1,10 @@
+{
+  "name": "ioshiro",
+  "private": true,
+  "scripts": {
+    "dev": "bun scripts/dev.mjs"
+  },
+  "devDependencies": {
+    "liquidjs": "^10.30.0"
+  }
+}

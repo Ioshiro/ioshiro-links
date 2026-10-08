@@ -1,0 +1,9 @@
+title: "~/ioshiro"
+description: "sugo denso per gente strana"
+lang: it
+timezone: Europe/Rome
+exclude:
+  - README.md
+  - package.json
+  - bun.lock
+  - scripts/

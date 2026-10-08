@@ -1,0 +1,44 @@
+name: add link
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: add-link
+  cancel-in-progress: false
+
+jobs:
+  add:
+    # solo issue del proprietario aperte col form "+ link"
+    if: github.event.issue.user.login == github.repository_owner && contains(github.event.issue.labels.*.name, 'link')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: append to _data/links.yml
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_DATE: ${{ github.event.issue.created_at }}
+        run: node .github/scripts/add-link.mjs _data/links.yml
+
+      - name: commit
+        env:
+          N: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/links.yml
+          git diff --cached --quiet || git commit -m "link: #$N"
+          git push
+
+      - name: close issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+        run: gh issue close "$N" --repo "$GITHUB_REPOSITORY" --comment "salvato in ~/ioshiro ☂"

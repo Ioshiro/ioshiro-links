@@ -1,0 +1,28 @@
+name: "+ link"
+description: Salva un link in ~/ioshiro. Il titolo dell'issue diventa il titolo del link.
+labels: ["link"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: url
+      placeholder: https://…
+    validations:
+      required: true
+  - type: input
+    id: cat
+    attributes:
+      label: categoria
+      description: "path con /, es. dev/rust/async"
+      placeholder: inbox
+  - type: textarea
+    id: desc
+    attributes:
+      label: descrizione
+      description: una riga, perché l'hai salvato
+  - type: input
+    id: tags
+    attributes:
+      label: tag
+      description: separati da spazio o virgola
+      placeholder: tool webgl

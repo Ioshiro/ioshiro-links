@@ -1,0 +1,93 @@
+# Una voce = un link. `cat` è un path: categoria/sottocategoria/...
+# Le voci nuove si appendono in fondo (a mano o dalla issue "+ link").
+
+- url: "https://ascii.rest/"
+  title: "ascii.rest"
+  cat: "art/ascii"
+  desc: "200+ pezzi ASCII animati, un tag HTML e via. La pioggia di Tokyo in testata viene da qui."
+  tags: [canvas, scene, mit]
+  added: 2026-10-08
+
+- url: "https://play.ertdfgcvb.xyz/"
+  title: "ASCII play"
+  cat: "art/ascii"
+  desc: "Playground live-code di ertdfgcvb: campi di caratteri procedurali, solo testo."
+  tags: [generative, livecode]
+  added: 2026-10-06
+
+- url: "https://surma.dev/things/ditherpunk/"
+  title: "Ditherpunk"
+  cat: "art/dithering"
+  desc: "Bayer, blue noise, error diffusion: il dithering monocromatico spiegato con le immagini giuste."
+  tags: [bayer, bluenoise, explainer]
+  added: 2026-10-05
+
+- url: "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web"
+  title: "The Art of Dithering and Retro Shading for the Web"
+  cat: "art/dithering"
+  desc: "Dithering negli shader WebGL, con demo interattive dentro l'articolo."
+  tags: [webgl, shader, explainer]
+  added: 2026-10-04
+
+- url: "https://dither-pix.vercel.app/"
+  title: "DITHER"
+  cat: "tools/dithering"
+  desc: "Dither di immagini, GIF e video nel browser. 17 algoritmi, niente upload."
+  tags: [tool, video]
+  added: 2026-10-03
+
+- url: "https://github.com/bedigambar/Mosaik"
+  title: "Mosaik"
+  cat: "tools/dithering"
+  desc: "Studio per dithering, animazioni ASCII e grafica dot matrix."
+  tags: [tool, ascii, dotmatrix]
+  added: 2026-10-02
+
+- url: "https://www.ascii-motion.com/"
+  title: "ASCII Motion"
+  cat: "tools/ascii"
+  desc: "Editor open source per animazioni ASCII frame-by-frame; converte anche video in testo."
+  tags: [tool, animation]
+  added: 2026-10-01
+
+- url: "https://departuremono.com/"
+  title: "Departure Mono"
+  cat: "type/fonts"
+  desc: "Monospace pixel font lo-fi. È quello dei titoli qui."
+  tags: [pixel, ofl]
+  added: 2026-09-28
+
+- url: "https://github.com/JetBrains/JetBrainsMono"
+  title: "JetBrains Mono"
+  cat: "type/fonts"
+  desc: "Mono leggibile per il testo lungo, accanto al pixel font."
+  tags: [mono, ofl]
+  added: 2026-09-27
+
+- url: "https://github.com/ertdfgcvb/play.core"
+  title: "play.core"
+  cat: "dev/web/canvas"
+  desc: "Il motore di ASCII play: renderer testuale a griglia, piccolo e leggibile."
+  tags: [js, renderer]
+  added: 2026-09-25
+
+- url: "https://onepagelove.com/tag/dither-effect"
+  title: "Dither Effect Website Examples"
+  cat: "inspo/web"
+  desc: "Siti moderni che usano il dithering in modo pulito, non nostalgico."
+  tags: [gallery, dithering]
+  added: 2026-09-22
+
+- url: "https://www.awwwards.com/inspiration/typography-driven-hero-with-ascii-characters-upvent-digital"
+  title: "Typography-Driven Hero with ASCII Characters"
+  cat: "inspo/web"
+  desc: "Hero tipografico fatto di caratteri che si compongono."
+  tags: [hero, ascii]
+  added: 2026-09-20
+
+- url: "https://www.youtube.com/@LofiGirl"
+  title: "Lofi Girl"
+  cat: "music/lofi"
+  desc: "Sottofondo ufficiale per salvare link sotto la pioggia."
+  tags: [stream, chill]
+  added: 2026-09-18

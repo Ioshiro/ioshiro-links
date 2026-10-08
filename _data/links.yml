@@ -91,3 +91,10 @@
   desc: "Sottofondo ufficiale per salvare link sotto la pioggia."
   tags: [stream, chill]
   added: 2026-09-18
+
+- url: "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+  title: "Bello Jev"
+  cat: "dev/ai"
+  desc: "Interessante lettura suppongo"
+  tags: ["jev"]
+  added: 2026-10-08

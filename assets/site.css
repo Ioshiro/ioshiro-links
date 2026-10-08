@@ -496,23 +496,24 @@ kbd {
 .foot a { text-underline-offset: 0.2em; text-decoration-color: var(--ink-3); }
 .foot a:hover { color: var(--amber); text-decoration-color: currentColor; }
 
+/* stesso linguaggio dei chip: blocco squadrato, all'hover il video inverso del cursore */
 .btn {
-  padding: 0.45rem 0.9rem;
-  border: 1px solid var(--amber);
-  border-radius: 999px;
+  padding: 0.4rem 0.8ch;
+  background: var(--night-3);
   color: var(--amber);
-  font-family: var(--pixel);
+  font: 400 0.8125rem/1 var(--pixel);
   text-decoration: none !important;
   transition: background-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 .btn:hover { background: var(--amber); color: var(--night-0) !important; }
+.btn:focus-visible { outline-offset: 1px; }
 
 /* in fondo ritorna solo la striscia più bassa della scena, la strada bagnata che in testata
    sparisce nella dissolvenza: la pagina si chiude dove la testata si apre.
    .hero.hero--coda batte l'altezza di .hero nelle media query */
 .hero.hero--coda {
   height: clamp(4.5rem, 9vw, 7.5rem);
-  margin-top: clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(0.25rem, 1vw, 0.75rem); /* le prime righe della dissolvenza sono già buio pieno */
 }
 .hero--coda .hero__fade { inset: 0 0 auto 0; height: 60%; }
 /* la scena è più alta della striscia: la griglia la allineerebbe in alto, qui va ancorata al fondo */

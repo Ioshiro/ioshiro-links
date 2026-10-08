@@ -24,6 +24,9 @@
   --amber-2: #c97f3a;
   --teal: #5fd3c6;
   --teal-2: #2f8f86;
+  /* terzo neon, solo nelle firme di idk/ e inspo/ */
+  --orchid: #c58af9;
+  --orchid-2: #7a52b3;
 
   --pixel: "Departure Mono", "JetBrains Mono", ui-monospace, monospace;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
@@ -277,7 +280,8 @@ kbd {
 .pane__title .slash { color: var(--amber); }
 .pane__n { font-size: 0.75rem; color: var(--ink-3); vertical-align: 0.15em; }
 
-/* firma dithered: skyline riflessa, seminata dal nome della categoria */
+/* firma dithered: animazione a tema per le categorie principali (site.js),
+   skyline riflessa seminata dal nome per le altre */
 .pane__sig {
   display: block;
   width: 100%;

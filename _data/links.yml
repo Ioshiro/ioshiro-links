@@ -23,7 +23,7 @@
   added: 2026-10-05
 
 - url: "https://blog.maximeheckel.com/posts/the-art-of-dithering-and-retro-shading-web"
-  title: "The Art of Dithering and Retro Shading for the Web"
+  title: "Dithering/Retro shading blog"
   cat: "art/dithering"
   desc: "Dithering negli shader WebGL, con demo interattive dentro l'articolo."
   tags: [webgl, shader, explainer]

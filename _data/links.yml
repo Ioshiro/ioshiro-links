@@ -52,49 +52,43 @@
 
 - url: "https://departuremono.com/"
   title: "Departure Mono"
-  cat: "type/fonts"
+  cat: "dev/fonts"
   desc: "Monospace pixel font lo-fi. È quello dei titoli qui."
   tags: [pixel, ofl]
   added: 2026-09-28
 
 - url: "https://github.com/JetBrains/JetBrainsMono"
   title: "JetBrains Mono"
-  cat: "type/fonts"
+  cat: "dev/fonts"
   desc: "Mono leggibile per il testo lungo, accanto al pixel font."
   tags: [mono, ofl]
   added: 2026-09-27
 
-- url: "https://github.com/ertdfgcvb/play.core"
-  title: "play.core"
-  cat: "dev/web/canvas"
-  desc: "Il motore di ASCII play: renderer testuale a griglia, piccolo e leggibile."
-  tags: [js, renderer]
-  added: 2026-09-25
 
 - url: "https://onepagelove.com/tag/dither-effect"
   title: "Dither Effect Website Examples"
-  cat: "inspo/web"
+  cat: "dev/inspo"
   desc: "Siti moderni che usano il dithering in modo pulito, non nostalgico."
   tags: [gallery, dithering]
   added: 2026-09-22
 
 - url: "https://www.awwwards.com/inspiration/typography-driven-hero-with-ascii-characters-upvent-digital"
   title: "Typography-Driven Hero with ASCII Characters"
-  cat: "inspo/web"
+  cat: "dev/inspo"
   desc: "Hero tipografico fatto di caratteri che si compongono."
   tags: [hero, ascii]
   added: 2026-09-20
 
-- url: "https://www.youtube.com/@LofiGirl"
-  title: "Lofi Girl"
-  cat: "music/lofi"
-  desc: "Sottofondo ufficiale per salvare link sotto la pioggia."
-  tags: [stream, chill]
+- url: "https://soundcloud.com/mayawaska/mayawaska-vishnu-lounge-dub-mix"
+  title: "Mayawaska Vishnu Lounge Dub Mix"
+  cat: "music"
+  desc: "Una delle playlist più belle di sempre."
+  tags: [soundcloud, dub]
   added: 2026-09-18
 
 - url: "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
-  title: "Bello Jev"
-  cat: "dev/ai"
-  desc: "Interessante lettura suppongo"
+  title: "Jev - System One Model"
+  cat: "ai/models"
+  desc: "Modello non LLM, classificatore generale"
   tags: ["jev"]
   added: 2026-10-08

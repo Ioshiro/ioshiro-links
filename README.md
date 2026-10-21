@@ -43,6 +43,8 @@ Anteprima senza Ruby/Jekyll: `scripts/dev.mjs` compila `index.html` con liquidjs
 
 `/` mette il focus sulla ricerca, `Esc` la svuota. Filtri e query finiscono nell'URL (`?cat=art&q=dither`), quindi si possono salvare.
 
+Su mobile la scena è più bassa. Nella vista compatta i titoli vanno a capo senza troncamenti e le descrizioni occupano al massimo due righe; la vista larga mostra le descrizioni complete, il dominio e i tag.
+
 ## Crediti
 
 Scena [tokyo rain](https://ascii.rest/tokyo-rain/) di [@bas3line](https://github.com/bas3line) (MIT, caricata da ascii.rest). Font [Departure Mono](https://departuremono.com/) e [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) (OFL), inclusi in `assets/fonts`.

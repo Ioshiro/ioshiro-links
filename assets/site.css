@@ -534,10 +534,26 @@ kbd {
 }
 
 @media (max-width: 40rem) {
+  .hero { height: clamp(8rem, 23svh, 12rem); }
   /* su schermi stretti il pannello perde il bordo: lo spazio serve al testo */
   .pane { padding: 0; border: 0; border-radius: 0; margin-bottom: 1.75rem; }
   .pane__title { margin: 0; padding: 0; }
-  .link a { grid-template-columns: minmax(0, 1fr); }
+  .link a {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 2.75rem;
+    padding-block: 0.375rem;
+  }
+  .link__body { display: grid; gap: 0.125rem; white-space: normal; }
+  .link__title { overflow: visible; overflow-wrap: anywhere; }
+  .link__desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  .link__desc::before { content: none; }
+  .is-wide .link__desc { display: block; }
   .link__meta { display: none; }
   .is-wide .link__meta { display: grid; }
   .prompt { font-size: 0.875rem; }

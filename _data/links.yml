@@ -92,3 +92,178 @@
   desc: "Modello non LLM, classificatore generale"
   tags: ["jev"]
   added: 2026-10-08
+
+- url: "https://www.redblobgames.com/grids/hexagons/"
+  title: "Hexagonal Grids"
+  cat: "dev/ui"
+  desc: "Studio di griglie esagonali"
+  tags: ["grids","algorithms","hexagon"]
+  added: 2024-10-24
+
+- url: "https://lawsofux.com/"
+  title: "Laws of UX"
+  cat: "dev/design"
+  desc: "Principi di UX fondamentali"
+  tags: ["ux","reference"]
+  added: 2026-10-21
+
+- url: "https://component.gallery/"
+  title: "The Component Gallery"
+  cat: "dev/design"
+  desc: "Componenti di interfaccia confrontati attraverso esempi tratti da design system reali."
+  tags: ["components","reference"]
+  added: 2025-12-11
+
+- url: "https://jdan.github.io/98.css/#status-bar"
+  title: "98.css"
+  cat: "dev/ui"
+  desc: "Libreria CSS per ricreare interfacce Windows 98 (c'è anche per xp e vista!)"
+  tags: ["css","retro","windows98","xp","vista"]
+  added: 2026-07-24
+
+- url: "https://thume.ca/2023/12/02/tracing-methods/"
+  title: "Tracing tools"
+  cat: "dev/perf"
+  desc: "Raccolta e spiegazioni su come sfruttare al massimo il tracing"
+  tags: []
+  added: 2023-12-06
+
+- url: "https://fsd.it/shop/fonts/pragmatapro/"
+  title: "PragmataPro"
+  cat: "dev/fonts"
+  desc: ""
+  tags: []
+  added: 2026-10-20
+
+- url: "https://kno.wled.ge/"
+  title: "WLED - led lib"
+  cat: "dev/iot"
+  desc: "Libreria per controllare le lucine led"
+  tags: ["esp32","smarthome"]
+  added: 2023-04-17
+
+- url: "https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/"
+  title: "Now that's what I call a Hacker"
+  cat: "idk/story"
+  desc: "breve storia di un vero hackers"
+  tags: ["hacker"]
+  added: 2022-11-11
+
+- url: "https://gijs.garden/#"
+  title: "The Garden of Gijs"
+  cat: "idk"
+  desc: "un giardino di opinioni"
+  tags: ["nature","green"]
+  added: 2023-12-06
+
+- url: "https://willempennings.nl/balancing-cube/"
+  title: "Balancing cube – Willem Pennings"
+  cat: "inspo/craft"
+  desc: "un bel cubo meccanico che si auto bilancia"
+  tags: ["esp"]
+  added: 2024-02-12
+
+- url: "https://dustinbrett.com/"
+  title: "daedalOS"
+  cat: "idk"
+  desc: "Un sistema operativo nel browser, doom compreso"
+  tags: ["os","nerdy"]
+  added: 2024-06-26
+
+- url: "https://www.wheresyoured.at/the-men-who-killed-google/"
+  title: "The Man Who Killed Google Search"
+  cat: "idk/story"
+  desc: "bella lettura:')"
+  tags: []
+  added: 2024-07-18
+
+- url: "https://geohot.com/"
+  title: "geohot"
+  cat: "inspo/ppl"
+  desc: "Un tizio milionario con opinioni interessanti"
+  tags: []
+  added: 2024-07-19
+
+- url: "https://github.com/alexta69/metube"
+  title: "metube: Self-hosted YouTube downloader"
+  cat: "tools/media"
+  desc: "scarica vidio da yt con un tuo serverino"
+  tags: ["yt","pirata"]
+  added: 2024-07-30
+
+- url: "https://cobalt.tools/"
+  title: "cobalt "
+  cat: "tools/media"
+  desc: "Scarica audio/video/radio/gif senza ad e cazzate"
+  tags: ["pirata","download"]
+  added: 2024-07-30
+
+- url: "https://esoteric.codes/"
+  title: "esoteric.codes"
+  cat: "idk/dev"
+  desc: "Raccolta di linguaggi di programmazione esoterici"
+  tags: []
+  added: 2024-07-31
+
+- url: "https://permacomputing.net/"
+  title: "permacomputing"
+  cat: "politics/dev"
+  desc: "Movimento anti capitalista su idee radicali legati alla computazione"
+  tags: []
+  added: 2024-08-02
+
+- url: "https://geminiprotocol.net/"
+  title: "Project Gemini"
+  cat: "politics/dev"
+  desc: "un \"internet\" alternativo"
+  tags: []
+  added: 2024-08-28
+
+- url: "https://drb.ie/articles/talkin-about-a-revolution/"
+  title: "Talkin’ about a Revolution - DRB"
+  cat: "politics"
+  desc: ""
+  tags: []
+  added: 2025-03-31
+
+- url: "https://bernsteinbear.com/blog/pl-writing/"
+  title: "Writing that changed how I think about PL | Max Bernstein"
+  cat: "dev/inspo"
+  desc: ""
+  tags: []
+  added: 2025-05-14
+
+- url: "https://users.cs.utah.edu/~elb/folklore/mel-annotated/node1.html#SECTION00010000000000000000"
+  title: "The Story of Mel, A Real Programmer"
+  cat: "idk/story"
+  desc: ""
+  tags: ["nerdy"]
+  added: 2025-07-16
+
+- url: "https://www.ccc.de/"
+  title: "CCC ? Home"
+  cat: "politics/dev"
+  desc: "Club storico di hackerony punkerony tedeschi"
+  tags: []
+  added: 2025-08-01
+
+- url: "https://phishyurl.com/"
+  title: "Create a Phishy URL"
+  cat: "idk/tool"
+  desc: "hehe"
+  tags: []
+  added: 2025-09-19
+
+- url: "https://stickertop.art/main/"
+  title: "sticker laptops"
+  cat: "idk/art"
+  desc: ""
+  tags: ["nerdy"]
+  added: 2025-11-12
+
+- url: "https://github.com/Swordfish90/cool-retro-term"
+  title: "cool-retro-term: retro terminal theme"
+  cat: "idk/tool"
+  desc: ""
+  tags: ["nerdy"]
+  added: 2025-11-25
